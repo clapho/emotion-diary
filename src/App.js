@@ -70,7 +70,7 @@ function App() {
 	const dataId = useRef(0);
 	const [data, dispatch] = useReducer(reducer, dummyData);
 
-	const onCreate = ({ date, content, emotion }) => {
+	const onCreate = (date, content, emotion) => {
 		dispatch({
 			type: 'CREATE',
 			data: {
@@ -110,8 +110,8 @@ function App() {
 						<Routes>
 							<Route path="/" element={<Home />} />
 							<Route path="/new" element={<New />} />
-							<Route path="/edit:id" element={<Edit />} />
-							<Route path="/diary:id" element={<Diary />} />
+							<Route path="/edit/:id" element={<Edit />} />
+							<Route path="/diary/:id" element={<Diary />} />
 						</Routes>
 					</div>
 				</BrowserRouter>
